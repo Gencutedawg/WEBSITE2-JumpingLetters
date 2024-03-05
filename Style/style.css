@@ -1,0 +1,57 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background: url('bgsky.mp4');
+    background-size: cover;
+    overflow: hidden;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+#bgVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.letters {
+    position: relative;
+    z-index: 1;
+    perspective: 1000px;
+}
+
+.letter {
+    cursor: pointer;
+    user-select: none;
+    width: 100px;
+    height: 100px;
+    background-size: cover;
+    background-image: url('character.png');
+    display: inline-block;
+    line-height: 1.5;
+    overflow: visible;
+    padding: 5px;
+    margin: 5px;
+    transition: transform 1s ease-out;
+}
+
+.letter.active {
+    transform-origin: bottom-left;
+}
